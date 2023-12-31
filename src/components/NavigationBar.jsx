@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Badge,
   Box,
   Button,
   IconButton,
@@ -12,6 +13,8 @@ import logo from "../utils/assets/logo.png";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
+import { FavoriteBorderOutlined } from "@mui/icons-material";
+import PortraitRoundedIcon from "@mui/icons-material/PortraitRounded";
 
 function NavigationBar() {
   return (
@@ -50,25 +53,13 @@ function NavigationBar() {
             <Box display={{ xs: "none", md: "flex" }} width={"45vw"}>
               <SearchItem />
             </Box>
-            <Stack
-              direction={"row"}
-              justifyContent={"flex-end"}
-              spacing={{ xs: 0, md: 3 }}
-              pr={{ xs: 0, md: 2 }}
-            >
-              <AppBarIcons
-                type="account"
-                color="primary"
-                size="50px"
-                sizeForSmallDevices={"40px"}
-              />
-              <AppBarIcons
-                type="shop"
-                color="primary"
-                size="50px"
-                sizeForSmallDevices={"40px"}
-              />
-            </Stack>
+
+            <AppBarIconsList
+              type="shop"
+              color="primary"
+              size="40px"
+              sizeForSmallDevices={"30px"}
+            />
           </Stack>
           <Box
             display={{ xs: "flex", md: "none" }}
@@ -111,67 +102,85 @@ function SearchItem() {
   );
 }
 
+function AppBarIconsList({ size, sizeForSmallDevices }) {
+  return (
+    <Stack direction={"row"} spacing={2}>
+      <IconButton
+        variant="outlined"
+        disableRipple
+        sx={{ width: { xs: sizeForSmallDevices, md: size } }}
+      >
+        <PortraitRoundedIcon
+          color="secondary"
+          sx={{
+            fontSize: { xs: sizeForSmallDevices, md: size },
+            stroke: "white",
+            strokeWidth: 0.5,
+          }}
+        />
+      </IconButton>
+      <IconButton
+        variant="outlined"
+        disableRipple
+        sx={{ width: { xs: sizeForSmallDevices, md: size } }}
+      >
+        <Badge badgeContent={"1"} color="primary">
+          <FavoriteBorderOutlined
+            color="secondary"
+            sx={{
+              fontSize: { xs: sizeForSmallDevices, md: size },
+              stroke: "white",
+              strokeWidth: 0.5,
+            }}
+          />
+        </Badge>
+      </IconButton>
+      <IconButton
+        variant="outlined"
+        disableRipple
+        sx={{ width: { xs: sizeForSmallDevices, md: size } }}
+      >
+        <Badge badgeContent={"2"} color="primary">
+          <ShoppingCartOutlinedIcon
+            color="secondary"
+            sx={{
+              fontSize: { xs: sizeForSmallDevices, md: size },
+              stroke: "white",
+              strokeWidth: 0.5,
+            }}
+          />
+        </Badge>
+      </IconButton>
+    </Stack>
+  );
+}
+
 function AppBarIcons({ type, color, size, sizeForSmallDevices }) {
   return (
     <Box display="flex">
-      {type === "shop" && (
-        <>
-          <Box display={{ xs: "none", md: "flex" }}>
-            <Stack direction="column" alignItems="center">
-              <IconButton>
-                <ShoppingCartOutlinedIcon
-                  color={color}
-                  sx={{ fontSize: size, stroke: "#ffffff", strokeWidth: 1 }}
-                />
-              </IconButton>
-              <Typography variant="subtitle1" color={color}>
-                Shop
-              </Typography>
-            </Stack>
-          </Box>
-          <Box display={{ xs: "flex", md: "none" }}>
-            <IconButton>
-              <ShoppingCartOutlinedIcon
-                color={color}
-                sx={{
-                  fontSize: sizeForSmallDevices,
-                  stroke: "#ffffff",
-                  strokeWidth: 1,
-                }}
-              />
-            </IconButton>
-          </Box>
-        </>
+      {type == "account" && (
+        <IconButton
+          variant="outlined"
+          disableRipple
+          sx={{ width: { xs: sizeForSmallDevices, md: size } }}
+        >
+          <AccountCircleOutlinedIcon
+            sx={{
+              stroke: "white",
+              strokeWidth: 0.5,
+            }}
+          />
+        </IconButton>
       )}
-
-      {type === "account" && (
-        <>
-          <Box display={{ xs: "none", md: "flex" }}>
-            <Stack direction="column" alignItems="center">
-              <IconButton>
-                <AccountCircleOutlinedIcon
-                  color={color}
-                  sx={{ fontSize: size, stroke: "#ffffff", strokeWidth: 1 }}
-                />
-              </IconButton>
-              <Typography variant="subtitle1" color={color}>
-                Account
-              </Typography>
-            </Stack>
-          </Box>
-          <Box display={{ xs: "flex", md: "none" }}>
-            <IconButton>
-              <AccountCircleOutlinedIcon
-                color={color}
-                sx={{
-                  fontSize: sizeForSmallDevices,
-                  stroke: "#ffffff",
-                  strokeWidth: 1,
-                }}
-              />
-            </IconButton>
-          </Box>
-        </>
+      {type == "shop" && (
+        <Button
+          startIcon={<ShoppingCartOutlinedIcon />}
+          variant="outlined"
+          disableRipple
+          sx={{ width: { xs: sizeForSmallDevices, md: size } }}
+        >
+          {type}
+        </Button>
       )}
     </Box>
   );
