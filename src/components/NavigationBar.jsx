@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Avatar,
   Badge,
   Box,
   Button,
@@ -7,9 +8,10 @@ import {
   Input,
   Stack,
   Typography,
+  useTheme,
 } from "@mui/material";
 import React from "react";
-import logo from "../utils/assets/logo.png";
+import logo from "../utils/assets/logo.jpg";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -17,8 +19,14 @@ import { FavoriteBorderOutlined } from "@mui/icons-material";
 import PortraitRoundedIcon from "@mui/icons-material/PortraitRounded";
 
 function NavigationBar() {
+  const theme = useTheme();
   return (
-    <Box sx={{ flexGrow: 1 }} bgcolor={"transparent"} px={{ xs: 2, md: 7 }}>
+    <Box
+      sx={{ flexGrow: 1 }}
+      bgcolor={"transparent"}
+      px={{ xs: 2, md: 7 }}
+      py={2}
+    >
       <AppBar
         position="sticky"
         sx={{ backgroundColor: "transparent" }}
@@ -43,13 +51,7 @@ function NavigationBar() {
                 />
               </IconButton>
             </Box>
-            <Box display={"flex"}>
-              <img
-                src={logo}
-                alt="Logo"
-                style={{ width: "150px", height: "120px" }}
-              />
-            </Box>
+            <AppLogo />
             <Box display={{ xs: "none", md: "flex" }} width={"45vw"}>
               <SearchItem />
             </Box>
@@ -62,6 +64,7 @@ function NavigationBar() {
             />
           </Stack>
           <Box
+            pt={2}
             display={{ xs: "flex", md: "none" }}
             width={"80vw"}
             alignSelf={"center"}
@@ -70,6 +73,27 @@ function NavigationBar() {
           </Box>
         </Stack>
       </AppBar>
+    </Box>
+  );
+}
+
+function AppLogo() {
+  const theme = useTheme();
+  return (
+    <Box display={"flex"}>
+      <Avatar
+        sx={{
+          height: "120px",
+          width: "120px",
+          boxShadow: theme.shadows[6],
+        }}
+      >
+        <img
+          src={logo}
+          alt="Logo"
+          style={{ width: "150px", height: "150px" }}
+        />
+      </Avatar>
     </Box>
   );
 }
@@ -185,5 +209,5 @@ function AppBarIcons({ type, color, size, sizeForSmallDevices }) {
     </Box>
   );
 }
-
+export { AppLogo };
 export default NavigationBar;

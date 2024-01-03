@@ -1,20 +1,12 @@
-import { Box, Stack, ThemeProvider} from "@mui/material";
-import DefaultLayout from "./Layout/DefaultLayout";
-import MenuTab from "./components/MenuTab";
-import SwiperAutoSwitch from "./components/AppSwipper";
-import "keen-slider/keen-slider.min.css";
+import { ThemeProvider} from "@mui/material";
 import theme from "./utils/theme/Theme";
+import "keen-slider/keen-slider.min.css";
+import HomePage from "./pages/HomePage";
 function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <DefaultLayout>
-       <Stack direction={'column'} spacing={1} >
-        <MenuTab  />
-       <SwiperAutoSwitch />
-       </Stack>
-      
-      </DefaultLayout>
+      <HomePage />
     </div>
     </ThemeProvider>
   );

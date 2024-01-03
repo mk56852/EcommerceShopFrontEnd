@@ -2,6 +2,28 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import menCateg from '../utils/assets/MenCateg.jpg' ; 
+import womenCateg from '../utils/assets/WomenCateg.jpg' ;
+import childCateg from '../utils/assets/childCateg.jpg';
+
+
+const categoryList = [
+    {
+        title : 'Men' ,
+        imgSrc : menCateg , 
+
+    },
+    {
+        title : 'Women' ,
+        imgSrc : womenCateg , 
+
+    },{
+        title : 'Children' ,
+        imgSrc : childCateg , 
+
+    }
+
+]
 const menuItemsNames = ["Men" ,"Women" , "Children" , "Accessories" , "News"]
 const menuItems = {
     "Men" : {
@@ -112,4 +134,28 @@ const socialMediaList = [
 
 ]
 
-export {menuItems , menuItemsNames,socialMediaList}
+
+const valuesItem = [
+    {
+        icon :"material-symbols-light:support-agent-outline-sharp" ,
+        header : 'Quality service' ,
+        body : 'Dedicated customer service'
+    },
+    {
+        icon :"carbon:delivery"  ,
+        header : 'Home delivery service' ,
+        body : 'Home delivery in less than 72 hours'
+    },
+    {
+        icon :"clarity:new-line"  ,
+        header : 'New products' ,
+        body : 'New products every two weeks'
+    },
+    {
+        icon :"gala:secure" ,
+        header : 'Secure payment' ,
+        body : 'Secure online payment or cash on delivery'
+    },
+]
+
+export {valuesItem,menuItems , menuItemsNames,socialMediaList , categoryList}

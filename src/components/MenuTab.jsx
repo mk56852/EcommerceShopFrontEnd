@@ -51,7 +51,11 @@ function MenuHoverItem({ name, items }) {
         sx={{ "&:hover": { backgroundColor: "transparent" } }}
         aria-haspopup="true"
       >
-        <Typography variant="subtitle1" color={"primary"}>
+        <Typography
+          variant="subtitle1"
+          color={"primary.main"}
+          fontWeight={"bolder"}
+        >
           {name}
         </Typography>
       </Button>
@@ -64,15 +68,17 @@ function MenuHoverItem({ name, items }) {
         sx={{
           "&:hover": {
             backgroundColor: "transparent",
-            border: "1px solid black",
-            borderRadius: "10px",
           },
         }}
         aria-haspopup="true"
         endIcon={<ArrowDropDownIcon />}
         {...bindHover(popupState, { openDelay: 600 })}
       >
-        <Typography variant="subtitle1" color={"primary"}>
+        <Typography
+          variant="subtitle1"
+          color={"primary.main"}
+          fontWeight={"bolder"}
+        >
           {name}
         </Typography>
       </Button>
@@ -92,7 +98,6 @@ function MenuHoverItem({ name, items }) {
   );
 }
 function SpecificMenuItem({ items, onClick }) {
-  console.log(items);
   return (
     <Box width={"60vw"} height={"30vh"} m={2}>
       <Grid container spacing={3}>

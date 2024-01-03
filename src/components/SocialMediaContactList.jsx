@@ -18,7 +18,10 @@ function SocialMediaDiv({ children, color, size, link, useDefault }) {
   const theme = useTheme();
   if (useDefault)
     return (
-      <IconButton sx={{ fontSize: size }} disableRipple>
+      <IconButton
+        sx={{ fontSize: size, boxShadow: theme.shadows[3] }}
+        disableRipple
+      >
         <a
           href={link}
           target="_blank"
@@ -37,7 +40,7 @@ function SocialMediaDiv({ children, color, size, link, useDefault }) {
             width={size}
             height={size}
             bgcolor={theme.palette.primary.main}
-            sx={{ borderRadius: "10px" }}
+            sx={{ borderRadius: "10px", boxShadow: theme.shadows[4] }}
           >
             {children}
           </Box>
@@ -64,7 +67,11 @@ function SocialMediaDiv({ children, color, size, link, useDefault }) {
             alignItems={"center"}
             width={size}
             height={size}
-            sx={{ backgroundColor: color, borderRadius: "10px" }}
+            sx={{
+              backgroundColor: color,
+              borderRadius: "10px",
+              boxShadow: theme.shadows[4],
+            }}
           >
             {children}
           </Box>
