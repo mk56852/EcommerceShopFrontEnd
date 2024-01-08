@@ -12,7 +12,7 @@ function SectionTitle({ title, subTitle }) {
     >
       <Typography
         variant="h3"
-        fontFamily={"cursive"}
+        fontFamily={"serif"}
         fontWeight={"boler"}
         color={"primary.main"}
       >
