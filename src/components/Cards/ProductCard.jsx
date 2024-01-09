@@ -20,7 +20,7 @@ function ProductCard1({ title, promotion, rating, body, imgSrc }) {
     setIsLiked(!isLiked);
   };
   return (
-    <Card sx={{ maxWidth: 240 }} elevation={3}>
+    <Card sx={{ width: "270px", maxWidth: "280px" }} elevation={3}>
       <CardActionArea>
         <Box
           display={"flex"}
@@ -74,6 +74,7 @@ function ProductCard1({ title, promotion, rating, body, imgSrc }) {
         </Stack>
         <Rating
           precision={1}
+          disabled
           defaultValue={rating}
           name="customized-color"
           sx={{ color: "color4.main" }}

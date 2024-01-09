@@ -12,6 +12,7 @@ import ProductCard1 from "../components/Cards/ProductCard";
 import Footer from "../components/Footer";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
+import ScrollList from "../components/Scroll-list/ScrollList";
 function HomePage() {
   return (
     <DefaultLayout>
@@ -34,51 +35,7 @@ function HomePage() {
         </Stack>
 
         <PriceCard />
-        <ScrollMenu
-          LeftArrow={<Button variant="outined">hello</Button>}
-          direction={"row"}
-          spacing={4}
-          px={3}
-          py={4}
-          justifyContent={"center"}
-        >
-          <ProductCard1
-            title={"Black Shirt"}
-            rating={4}
-            promotion={"-60%"}
-            imgSrc={"/images/p1.jpg"}
-            body={"20DT au lieu de 60 DT"}
-          />
-          <Box width={20}></Box>
-          <ProductCard1
-            title={"Blue Shirt"}
-            rating={4}
-            promotion={"-60%"}
-            imgSrc={"/images/p2.jpg"}
-            body={"20DT au lieu de 60 DT"}
-          />
-          <ProductCard1
-            title={"White Shirt"}
-            rating={4}
-            promotion={"-60%"}
-            imgSrc={"/images/p3.jpg"}
-            body={"20DT au lieu de 60 DT"}
-          />
-          <ProductCard1
-            title={"Black Shirt"}
-            rating={4}
-            promotion={"-60%"}
-            imgSrc={"/images/p1.jpg"}
-            body={"20DT au lieu de 60 DT"}
-          />
-          <ProductCard1
-            title={"White Shirt"}
-            rating={4}
-            promotion={"-60%"}
-            imgSrc={"/images/p3.jpg"}
-            body={"20DT au lieu de 60 DT"}
-          />
-        </ScrollMenu>
+        <ScrollList />
         <SectionTitle
           title="Values"
           subTitle={"That's why you have to choose us"}
