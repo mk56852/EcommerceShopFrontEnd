@@ -27,7 +27,7 @@ function ScrollList() {
           imgSrc={"/images/p1.jpg"}
           body={"20DT au lieu de 60 DT"}
         />
-        <Box width={40}></Box>
+        <Box width={{ xs: 12, md: 40 }}></Box>
         <ProductCard1
           title={"Blue Shirt"}
           rating={4}
@@ -35,7 +35,7 @@ function ScrollList() {
           imgSrc={"/images/p2.jpg"}
           body={"20DT au lieu de 60 DT"}
         />
-        <Box width={40}></Box>
+        <Box width={{ xs: 12, md: 40 }}></Box>
         <ProductCard1
           title={"White Shirt"}
           rating={4}
@@ -43,7 +43,7 @@ function ScrollList() {
           imgSrc={"/images/p3.jpg"}
           body={"20DT au lieu de 60 DT"}
         />
-        <Box width={40}></Box>
+        <Box width={{ xs: 12, md: 40 }}></Box>
         <ProductCard1
           title={"White Shirt"}
           rating={4}
@@ -51,7 +51,7 @@ function ScrollList() {
           imgSrc={"/images/p3.jpg"}
           body={"20DT au lieu de 60 DT"}
         />
-        <Box width={40}></Box>
+        <Box width={{ xs: 12, md: 40 }}></Box>
         <ProductCard1
           title={"Black Shirt"}
           rating={4}
@@ -59,7 +59,7 @@ function ScrollList() {
           imgSrc={"/images/p1.jpg"}
           body={"20DT au lieu de 60 DT"}
         />
-        <Box width={40}></Box>
+        <Box width={{ xs: 12, md: 40 }}></Box>
         <ProductCard1
           title={"Black Shirt"}
           rating={4}
@@ -67,7 +67,7 @@ function ScrollList() {
           imgSrc={"/images/p1.jpg"}
           body={"20DT au lieu de 60 DT"}
         />
-        <Box width={40}></Box>
+        <Box width={{ xs: 12, md: 40 }}></Box>
         <ProductCard1
           title={"White Shirt"}
           rating={4}
@@ -75,7 +75,7 @@ function ScrollList() {
           imgSrc={"/images/p3.jpg"}
           body={"20DT au lieu de 60 DT"}
         />
-        <Box width={40}></Box>
+        <Box width={{ xs: 12, md: 40 }}></Box>
       </ScrollMenu>
     </Box>
   );

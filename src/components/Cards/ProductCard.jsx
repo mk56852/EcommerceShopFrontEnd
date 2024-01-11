@@ -20,12 +20,12 @@ function ProductCard1({ title, promotion, rating, body, imgSrc }) {
     setIsLiked(!isLiked);
   };
   return (
-    <Card sx={{ width: "270px", maxWidth: "280px" }} elevation={3}>
+    <Card sx={{ width: { xs: 170, md: 240 } }} elevation={3}>
       <CardActionArea>
         <Box
           display={"flex"}
           width={"100%"}
-          height={250}
+          height={{ xs: 170, md: 240 }}
           alignItems={"center"}
           justifyContent={"center"}
         >
@@ -33,7 +33,7 @@ function ProductCard1({ title, promotion, rating, body, imgSrc }) {
             src={imgSrc}
             style={{
               maxWidth: "100%",
-              maxHeight: "90%",
+              maxHeight: "95%",
               display: "block",
               margin: "auto",
               boxShadow: theme.shadows[3],
@@ -55,12 +55,14 @@ function ProductCard1({ title, promotion, rating, body, imgSrc }) {
       </CardActionArea>
       <CardContent>
         <Stack direction={"row"} justifyContent={"space-between"}>
-          <Typography gutterBottom variant="h6" component="div">
+          <Typography gutterBottom variant="subtitle1" component="div">
             {title}
           </Typography>
           <IconButton
             onClick={handleLikeClick}
             sx={{
+              height: 35,
+              width: 35,
               backgroundColor: "white",
               boxShadow: theme.shadows[3],
             }}

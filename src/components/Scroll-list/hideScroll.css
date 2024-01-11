@@ -1,5 +1,6 @@
 .react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
     display: none;
+    width: '100%';
   }
   
   .react-horizontal-scrolling-menu--scroll-container {

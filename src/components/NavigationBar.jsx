@@ -132,7 +132,10 @@ function AppBarIconsList({ size, sizeForSmallDevices }) {
       <IconButton
         variant="outlined"
         disableRipple
-        sx={{ width: { xs: sizeForSmallDevices, md: size } }}
+        sx={{
+          width: { xs: sizeForSmallDevices, md: size },
+          display: { xs: "none", md: "flex" },
+        }}
       >
         <PortraitRoundedIcon
           color="secondary"

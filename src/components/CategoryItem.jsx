@@ -10,7 +10,7 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
   height: 200,
   [theme.breakpoints.down("sm")]: {
     width: "100% !important", // Overrides inline-style
-    height: 100,
+    height: 70,
   },
   "&:hover, &.Mui-focusVisible": {
     zIndex: 1,
@@ -74,7 +74,7 @@ const ImageMarked = styled("span")(({ theme }) => ({
 
 export default function CategoryItem({ title, imgSrc }) {
   return (
-    <Box sx={{ minWidth: 300, width: "100%", height: 390 }}>
+    <Box sx={{ width: "100%", height: "40vh" }}>
       <ImageButton
         focusRipple
         style={{

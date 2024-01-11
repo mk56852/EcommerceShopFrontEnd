@@ -12,15 +12,16 @@ function Arrow({ children, disabled, onClick, left, right }) {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
+      bgcolor={"transparent"}
     >
       <Box
-        height={70}
-        width={70}
+        height={40}
+        width={40}
         alignItems={"center"}
         justifyContent={"center"}
         bgcolor={"color5.main"}
         sx={{
-          borderRadius: "70px",
+          borderRadius: "40px",
           cursor: "pointer",
           display: "flex",
           flexDirection: "column",

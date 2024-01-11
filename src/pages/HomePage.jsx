@@ -54,9 +54,7 @@ function HomePage() {
             />
           ))}
         </Stack>
-        <Box py={5} bgcolor={"#f5f5f5"} px={10}>
-          <Footer />
-        </Box>
+        <Box py={5} bgcolor={"#f5f5f5"} px={10}></Box>
       </Stack>
     </DefaultLayout>
   );
